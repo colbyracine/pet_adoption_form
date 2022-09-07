@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Adoption</title>
+  </head>
+  <body>
+    {% for pet in pets %}
+    <img src="{{pet.image_url()}}" width="50%" height="50%" />
+    <p>{{pet.name}} {%if pet.available%} <b> is available!</b> {%endif%}</p>
+    {%endfor%}
+
+    <a class="btn btn-primary" href="{{ url_for('add_pet') }}">Add a Pet</a>
+  </body>
+</html>
